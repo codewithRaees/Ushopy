@@ -10,12 +10,12 @@ const Header = () => {
   const [ordertext, setOrderText] = useState(false);
   const [isDark, setisDark] = useState(false);
   return (
-    <div className="flex md:flex-row flex-col justify-between items-center bg-[#FFDCA9] px-10 py-2 main-header">
+    <div className="flex md:flex-row flex-col justify-between items-center bg-[#FFDCA9] px-10 py-1 main-header">
       {/* header logo section  */}
 
       <div className="left-header flex justify-between items-center pb-2">
         {" "}
-        <img className="w-14" src={logo} alt="Logo" />
+        <img className="w-12" src={logo} alt="Logo" />
         <h1 className="font-bold text-2xl">Ushopy</h1>
       </div>
       {/* Header searchBar section  */}
