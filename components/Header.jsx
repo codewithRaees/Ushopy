@@ -18,7 +18,7 @@ const Header = () => {
         <h1 className="font-bold text-2xl">Ushopy</h1>
       </div>
       {/* Header searchBar section  */}
-      <div className="right-header flex items-center">
+      <div className="relative right-header flex items-center">
         <div className="flex items-center border-2 bg-white rounded-full min-h-10 overflow-hidden searchBar">
           {" "}
           <input
@@ -51,9 +51,13 @@ const Header = () => {
             setisDark(!isDark);
             console.log(!isDark);
           }}
-          className={` bg-green-400 flex items-center `}
+          className={`  flex text-white  items-center  `}
         >
-          {!isDark ? <FaSun /> : <FaMoon />}
+          {!isDark ? (
+            <FaSun className="text-white text-xl" />
+          ) : (
+            <FaMoon className="text-white text-xl" />
+          )}
           {!isDark ? "Dark" : "light"} Mode
         </p>
       </div>
