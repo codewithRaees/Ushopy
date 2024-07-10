@@ -10,9 +10,10 @@ const Header = () => {
   const [ordertext, setOrderText] = useState(false);
   const [isDark, setisDark] = useState(false);
   return (
-    <div className="flex justify-between items-center bg-[#FFDCA9] px-10 py-1 main-header">
+    <div className="flex md:flex-row flex-col justify-between items-center bg-[#FFDCA9] px-10 py-2 main-header">
       {/* header logo section  */}
-      <div className="left-header flex items-center">
+
+      <div className="left-header flex justify-between items-center pb-2">
         {" "}
         <img className="w-14" src={logo} alt="Logo" />
         <h1 className="font-bold text-2xl">Ushopy</h1>
@@ -46,20 +47,23 @@ const Header = () => {
           </span>
           <FaCartShopping className="text-2xl text-white" />
         </div>
-        <p
-          onClick={() => {
-            setisDark(!isDark);
-            console.log(!isDark);
-          }}
-          className={`  flex text-white  items-center  `}
-        >
-          {!isDark ? (
-            <FaSun className="text-white text-xl" />
-          ) : (
-            <FaMoon className="text-white text-xl" />
-          )}
-          {!isDark ? "Dark" : "light"} Mode
-        </p>
+        <div className="md:block hidden w-32">
+          {" "}
+          <p
+            onClick={() => {
+              setisDark(!isDark);
+              console.log(!isDark);
+            }}
+            className={`  flex text-white  items-center  `}
+          >
+            {!isDark ? (
+              <FaSun className="text-white text-xl" />
+            ) : (
+              <FaMoon className="text-white text-xl" />
+            )}
+            {!isDark ? "Dark" : "light"} Mode
+          </p>
+        </div>{" "}
       </div>
     </div>
   );
