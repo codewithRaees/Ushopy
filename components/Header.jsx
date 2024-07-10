@@ -26,7 +26,7 @@ const Header = () => {
             placeholder="search"
             id="searchBar"
           ></input>
-          <button className="bg-red-400">Search</button>
+          <button className="bg-red-400">Searchs</button>
         </div>
         <div
           className="flex items-center bg-[#F49510] mx-3 px-5 rounded-full h-8 text-white"
