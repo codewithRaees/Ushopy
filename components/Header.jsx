@@ -5,67 +5,65 @@ import { FaCartShopping } from "react-icons/fa6";
 import { FaMagnifyingGlass } from "react-icons/fa6";
 
 import { FaMoon } from "react-icons/fa6";
+import NavBar from "./NavBar";
 
 const Header = () => {
   const [ordertext, setOrderText] = useState(false);
   const [isDark, setisDark] = useState(false);
   return (
-    <div className="flex md:flex-row flex-col justify-between items-center bg-[#FFDCA9] px-10 py-1 main-header">
-      {/* header logo section  */}
+    <>
+      <div className="flex justify-between items-center bg-[#FFDCA9] px-20 md:py-1 main-header">
+        {/* header logo section  */}
 
-      <div className="left-header flex justify-between items-center pb-2">
-        {" "}
-        <img className="w-12" src={logo} alt="Logo" />
-        <h1 className="font-bold text-2xl">Ushopy</h1>
-      </div>
-      {/* Header searchBar section  */}
-      <div className="relative right-header flex items-center">
-        <div className="flex items-center border-2 bg-white rounded-full min-h-10 overflow-hidden searchBar">
+        <div className="left-header flex justify-between items-center pb-1 md:pb-2">
           {" "}
-          <input
-            type="search"
-            className="px-4 max-w-48 outline-none"
-            placeholder="search"
-            id="searchBar"
-          ></input>
-          <button className="bg-white px-3 text-gray-400">
-            <FaMagnifyingGlass />
-          </button>
+          <img className="w-10" src={logo} alt="Logo" />
+          <h1 className="font-bold text-3xl">Ushopy</h1>
         </div>
-        <div
-          className="flex items-center bg-[#F49510] mx-3 px-5 rounded-full h-8 text-white"
-          onMouseOver={() => {
-            setOrderText(!ordertext);
-          }}
-        >
-          <span
-            className={`transition duration-1000 ease-in-out    ${
-              !ordertext ? "inline" : "hidden"
-            } px-2`}
-          >
-            Orders
-          </span>
-          <FaCartShopping className="text-2xl text-white" />
-        </div>
-        <div className="md:block hidden w-32">
-          {" "}
-          <p
+        {/* Header searchBar section  */}
+        <div className="relative right-header flex items-center">
+          <div className="sm:block relative hidden group">
+            <input
+              type="text"
+              placeholder="search"
+              className="group-hover:w-[300px] border-gray-300 focus:border-1 focus:border-[#F49510] px-2 py-1 border rounded-full w-[200px] sm:w-[200px] focuse:w-[300px] transition-all duration-300 focus:outline-none"
+            />
+            <FaMagnifyingGlass className="group-hover:text-[#F49510] group-hover:text-primary top-1/2 right-3 absolute text-gray-500 -translate-y-1/2" />
+          </div>
+          <button
+            className="flex items-center gap-3 bg-[#F49510] mx-3 px-5 rounded-full h-8 text-white transition-all duration-200 group"
             onClick={() => {
-              setisDark(!isDark);
-              console.log(!isDark);
+              setOrderText(!ordertext);
             }}
-            className={`  flex text-white  items-center  `}
           >
-            {!isDark ? (
-              <FaSun className="text-white text-xl" />
-            ) : (
-              <FaMoon className="text-white text-xl" />
-            )}
-            {!isDark ? "Dark" : "light"} Mode
-          </p>
-        </div>{" "}
+            {" "}
+            <span className="group-hover:block hidden transition-all duration-200">
+              Order
+            </span>
+            <FaCartShopping className="text-2xl text-white" />
+          </button>
+          <div className="md:block hidden w-32">
+            {" "}
+            <p
+              onClick={() => {
+                setisDark(!isDark);
+                console.log(!isDark);
+              }}
+              className={`  flex text-white  items-center  `}
+            >
+              {!isDark ? (
+                <FaSun className="text-white text-xl" />
+              ) : (
+                <FaMoon className="text-white text-xl" />
+              )}
+              &nbsp; {!isDark ? "Dark" : "light"} Mode
+            </p>
+          </div>{" "}
+        </div>
       </div>
-    </div>
+      {/*  Main Menu */}
+      <NavBar />
+    </>
   );
 };
 

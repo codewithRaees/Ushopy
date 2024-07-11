@@ -6,7 +6,12 @@ export default {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      color: {
+        primary: "#fea928",
+        secondary: "#ed8900",
+      },
+    },
   },
   plugins: [],
 };
